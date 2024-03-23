@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="score-page.css" />
+    <script src="script.js" defer></script>
+    <title>Score</title>
+  </head>
+  <body>
+    <button class="go-back">Back</button>
+    <div class="container">
+      <div class="high-score-container">
+        <span>High Score</span>
+        <ul class="high-score-list"></ul>
+        <button class="reset-button">RESET</button>
+      </div>
+    </div>
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const goBackBtn = document.querySelector(".go-back");
+
+        function goBack() {
+          window.history.back();
+        }
+
+        goBackBtn.addEventListener("click", goBack);
+
+        // Highscore
+        let scoreList = document.querySelector(".high-score-list");
+
+        // Load the high scores from local storage
+        let highScores = JSON.parse(localStorage.getItem("highScores")) || [];
+
+        // Add each high score to the list
+        highScores.forEach((score) => {
+          let li = document.createElement("li");
+          li.textContent = score;
+          scoreList.appendChild(li);
+        });
+
+        const resetBtn = document.querySelector(".reset-button");
+        function resetList() {
+          scoreList.innerHTML = "";
+          localStorage.clear();
+        }
+
+        resetBtn.addEventListener("click", resetList);
+      });
+    </script>
+  </body>
+</html>

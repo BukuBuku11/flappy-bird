@@ -1,0 +1,57 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  overflow-y: hidden;
+}
+
+body {
+  height: 50rem;
+}
+
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 30rem;
+}
+
+.high-score-container {
+  border: 1px solid black;
+  width: 20rem;
+  height: 20rem;
+  display: flex;
+  overflow-y: scroll;
+}
+
+.high-score-container span {
+  height: 2rem;
+  margin: 0.5rem;
+  font-weight: 900;
+  border: 1px solid black;
+}
+
+.high-score-list li {
+  margin-bottom: 2rem;
+}
+
+.go-back {
+  margin: 2rem;
+  border-radius: 0px;
+  border-style: groove;
+  width: 5rem;
+  height: 3rem;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+.reset-button {
+  border-style: groove;
+  width: 5rem;
+  height: 2rem;
+  font-size: 1rem;
+  position: relative;
+  top: 18rem;
+}
